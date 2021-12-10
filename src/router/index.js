@@ -37,7 +37,7 @@ router.beforeEach((to, from, next) => {
     }
 
     store.commit("setAuth", Userfront.accessToken());
-    if (!store.getters.getAuth) {
+    if (!store.getters.auth) {
         Userfront.logout();
         return;
     }

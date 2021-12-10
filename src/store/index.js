@@ -22,6 +22,7 @@ export default new Vuex.Store({
         }
     },
     getters: {
-        getAuth: state => state.auth
+        auth: state => state.auth,
+        roles: state => state.auth?.roles
     }
 });
