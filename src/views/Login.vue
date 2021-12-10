@@ -13,7 +13,7 @@ export default {
     },
     data() {
         return {
-            formId: this.$store.getters.config?.USERFRONT_LOGIN_FORM_ID
+            formId: this.$store.getters.loginFormId
         };
     }
 };
