@@ -16,7 +16,6 @@ export default {
             Userfront.logout();
         }
     },
-
     computed: {
         isLoggedIn() {
             return !!Userfront.accessToken();

@@ -6,7 +6,6 @@
 
 <script>
 import { LoginForm } from "@userfront/vue";
-import { getConfig } from "@/modules/constants";
 
 export default {
     components: {
@@ -14,7 +13,7 @@ export default {
     },
     data() {
         return {
-            formId: getConfig().USERFRONT_LOGIN_FORM_ID
+            formId: this.$store.getters.config?.USERFRONT_LOGIN_FORM_ID
         };
     }
 };

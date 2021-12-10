@@ -3,19 +3,24 @@ import Vuex from "vuex";
 
 import jwt from "jsonwebtoken";
 
-import { getConfig } from "@/modules/constants";
-
 Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        auth: null
+        auth: null,
+        config: null
     },
     mutations: {
+        setConfig(state, config) {
+            state.config = config;
+        },
         setAuth(state, token) {
             try {
-                const auth = jwt.verify(token, getConfig().USERFRONT_PUBLIC_KEY);
-                state.auth = auth?.authorization[getConfig().USERFRONT_TENANT_ID];
+                if (state.config === null) {
+                    throw new Error("Config not set");
+                }
+                const auth = jwt.verify(token, state.config?.USERFRONT_PUBLIC_KEY);
+                state.auth = auth?.authorization[state.config?.USERFRONT_TENANT_ID];
             } catch (error) {
                 state.auth = null;
             }
@@ -23,6 +28,7 @@ export default new Vuex.Store({
     },
     getters: {
         auth: state => state.auth,
-        roles: state => state.auth?.roles
+        roles: state => state.auth?.roles,
+        config: state => state.config
     }
 });
