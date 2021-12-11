@@ -11,7 +11,8 @@ Vue.config.productionTip = false;
     const userfrontConfig = await fetch("/userfront.json");
     const config = await userfrontConfig.json();
 
-    const userfrontKey = await fetch("/userfront.key");
+    const publicKey = process.env.NODE_ENV === "production" ? "/userfront_pro.key" : "/userfront_dev.key";
+    const userfrontKey = await fetch(publicKey);
     config.USERFRONT_PUBLIC_KEY = await userfrontKey.text();
 
     store.commit("setConfig", config);
