@@ -30,6 +30,7 @@ export default new Vuex.Store({
         auth: state => state.auth,
         roles: state => state.auth?.roles,
         config: state => state.config,
-        loginFormId: state => state.config?.USERFRONT_LOGIN_FORM_ID
+        loginFormId: state => state.config?.USERFRONT_LOGIN_FORM_ID,
+        resetFormId: state => state.config?.USERFRONT_RESET_FORM_ID
     }
 });

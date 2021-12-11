@@ -1,4 +1,5 @@
 {
     "USERFRONT_TENANT_ID": "6bgvv6n7",
-    "USERFRONT_LOGIN_FORM_ID": "drmbmo"
+    "USERFRONT_LOGIN_FORM_ID": "drmbmo",
+    "USERFRONT_RESET_FORM_ID": "rmbdbm"
 }

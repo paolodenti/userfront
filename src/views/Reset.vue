@@ -1,6 +1,6 @@
 <template>
     <div>
-        <password-reset-form tool-id="rmbdbm" />
+        <password-reset-form :tool-id="formId" />
     </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
     },
     data() {
         return {
-            formId: this.$store.getters.loginFormId
+            formId: this.$store.getters.resetFormId
         };
     }
 };
