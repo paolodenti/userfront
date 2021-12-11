@@ -22,6 +22,7 @@ export default new Vuex.Store({
                 const auth = jwt.verify(token, state.config?.USERFRONT_PUBLIC_KEY);
                 state.auth = auth?.authorization[state.config?.USERFRONT_TENANT_ID];
             } catch (error) {
+                console.log(error);
                 state.auth = null;
             }
         }
