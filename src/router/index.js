@@ -5,6 +5,7 @@ import store from "../store/index.js";
 
 import Dashboard from "../views/Dashboard.vue";
 import Login from "../views/Login.vue";
+import Reset from "../views/Reset.vue";
 
 Vue.use(VueRouter);
 
@@ -19,6 +20,11 @@ const routes = [
         path: "/login",
         name: "Login",
         component: Login
+    },
+    {
+        path: "/reset",
+        name: "Reset",
+        component: Reset
     }
 ];
 
