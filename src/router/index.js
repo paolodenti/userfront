@@ -35,7 +35,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-    if (to.name === "Login" || to.name === "Logout") {
+    if (to.name === "Login" || to.name === "Logout" || to.name === "Reset") {
         return next();
     }
     if (!Userfront.accessToken()) {
